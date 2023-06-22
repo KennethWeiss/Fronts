@@ -9,39 +9,6 @@ class SLL {
     constructor(head=null){
         this.head = head;
     }
-    push(data){
-        if(this.head==null){
-            this.head = new Node(data);
-            return
-        }
-        else{
-            let pointer = this.head;
-            while(pointer.next != null){
-                pointer = pointer.next
-            }
-            pointer.next = new Node(data);
-            return
-        }
-    }
-    pop(){
-        if(this.head.next == null){
-            return null;
-        }
-        else if(this.head.next == null){
-            let temp = this.head.data;
-            this.head = null;
-            return temp
-        }
-        else{
-            let pointer = this.head;
-            while(pointer.next != null){
-                pointer = pointer.next
-            }
-            let temp = pointer.next.data;
-            pointer.next = null;
-            return temp
-        }
-    }
     addFront(data){
         if(this.head == null){
             this.head = new Node(data)
@@ -85,9 +52,9 @@ class SLL {
 }
 
 sll = new SLL()
-sll.push(10)
-sll.push(15)
-sll.push(18)
+sll.addFront(10)
+sll.addFront(15)
+sll.addFront(18)
 sll.log()
 sll.addFront(20)
 sll.log()
